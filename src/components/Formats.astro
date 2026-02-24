@@ -70,6 +70,43 @@
 <span class="text-fg-muted">- Run `pnpm test` before committing</span>
 <span class="text-fg-muted">- TypeScript strict mode required</span></code></pre>
       </div>
+
+      <!-- Sub-Agent profile -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">agents/code-reviewer/agent.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">code-reviewer</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Code Reviewer</span>
+<span class="text-accent-cyan">description</span>: <span class="text-accent-amber">Reviews code for security</span>
+<span class="text-accent-cyan">role</span>: <span class="text-accent-amber">delegation-target</span>
+<span class="text-accent-cyan">enabled</span>: <span class="text-accent-blue">true</span>
+<span class="text-accent-cyan">connection-type</span>: <span class="text-accent-amber">internal</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">You are a code review specialist.</span>
+<span class="text-fg-muted">Focus on security vulnerabilities,</span>
+<span class="text-fg-muted">performance, and test coverage.</span></code></pre>
+      </div>
+
+      <!-- Sub-Agent config.json -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">agents/code-reviewer/config.json</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code>&#123;
+  <span class="text-accent-cyan">"toolConfig"</span>: &#123;
+    <span class="text-accent-cyan">"disabledServers"</span>: [<span class="text-accent-amber">"filesystem"</span>],
+    <span class="text-accent-cyan">"enabledBuiltinTools"</span>: [<span class="text-accent-amber">"mark_work_complete"</span>]
+  &#125;,
+  <span class="text-accent-cyan">"modelConfig"</span>: &#123;
+    <span class="text-accent-cyan">"mcpToolsProviderId"</span>: <span class="text-accent-amber">"openai"</span>,
+    <span class="text-accent-cyan">"mcpToolsOpenaiModel"</span>: <span class="text-accent-amber">"gpt-4o"</span>
+  &#125;,
+  <span class="text-accent-cyan">"connection"</span>: &#123;
+    <span class="text-accent-cyan">"type"</span>: <span class="text-accent-amber">"stdio"</span>,
+    <span class="text-accent-cyan">"command"</span>: <span class="text-accent-amber">"my-agent"</span>,
+    <span class="text-accent-cyan">"args"</span>: [<span class="text-accent-amber">"--mode"</span>, <span class="text-accent-amber">"review"</span>]
+  &#125;
+&#125;</code></pre>
+      </div>
     </div>
 
     <!-- Frontmatter note -->

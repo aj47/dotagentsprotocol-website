@@ -12,7 +12,7 @@
         <div class="flex-1">
           <h3 class="text-fg font-bold text-[13px] mb-2">Create the directory</h3>
           <div class="code-block rounded-md overflow-hidden">
-            <pre class="p-3 text-[13px]"><code><span class="text-fg-dim">$</span> mkdir -p .agents/skills .agents/memories</code></pre>
+            <pre class="p-3 text-[13px]"><code><span class="text-fg-dim">$</span> mkdir -p .agents/skills .agents/agents .agents/memories</code></pre>
           </div>
         </div>
       </div>
@@ -73,6 +73,28 @@
       </div>
 
       <!-- Step 5 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">5</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-2">Define sub-agents</h3>
+          <p class="text-fg-dim text-xs mb-2">Declarative agent profiles with frontmatter + system prompt body.</p>
+          <div class="code-block rounded-md overflow-hidden">
+            <pre class="p-3 text-[13px] leading-relaxed"><code><span class="text-fg-dim"># .agents/agents/code-reviewer/agent.md</span>
+<span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">code-reviewer</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Code Reviewer</span>
+<span class="text-accent-cyan">description</span>: <span class="text-accent-amber">Reviews code for quality</span>
+<span class="text-accent-cyan">role</span>: <span class="text-accent-amber">delegation-target</span>
+<span class="text-accent-cyan">enabled</span>: <span class="text-accent-blue">true</span>
+<span class="text-fg-dim">---</span>
+
+You are a code review specialist.
+Focus on security and test coverage.</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
       <div class="flex gap-4 items-start">
         <div class="shrink-0 w-6 h-6 flex items-center justify-center text-accent-green text-xs border border-border rounded-sm">✓</div>
         <div class="flex-1">
