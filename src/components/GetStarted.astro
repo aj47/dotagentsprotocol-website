@@ -11,8 +11,13 @@
         <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">1</div>
         <div class="flex-1">
           <h3 class="text-fg font-bold text-[13px] mb-2">Create the directory</h3>
+          <p class="text-fg-dim text-xs mb-2">Global config lives at <code class="text-accent-cyan">~/.agents/</code>. Workspace overrides go in your project root.</p>
           <div class="code-block rounded-md overflow-hidden">
-            <pre class="p-3 text-[13px]"><code><span class="text-fg-dim">$</span> mkdir -p .agents/skills .agents/agents .agents/tasks .agents/memories</code></pre>
+            <pre class="p-3 text-[13px] leading-relaxed"><code><span class="text-fg-dim"># global (shared across all projects)</span>
+<span class="text-fg-dim">$</span> mkdir -p ~/.agents/skills ~/.agents/agents ~/.agents/tasks ~/.agents/memories
+
+<span class="text-fg-dim"># workspace (project-specific overrides)</span>
+<span class="text-fg-dim">$</span> mkdir -p .agents/skills .agents/agents .agents/tasks .agents/memories</code></pre>
           </div>
         </div>
       </div>
