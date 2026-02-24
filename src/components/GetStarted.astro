@@ -1,0 +1,86 @@
+---
+---
+<section id="get-started" class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-lg font-bold text-white mb-1 font-sans">6. Getting Started</h2>
+    <p class="text-fg-dim text-xs mb-8">Adopt incrementally. Start with what you need.</p>
+
+    <div class="space-y-6">
+      <!-- Step 1 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">1</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-2">Create the directory</h3>
+          <div class="code-block rounded-md overflow-hidden">
+            <pre class="p-3 text-[13px]"><code><span class="text-fg-dim">$</span> mkdir -p .agents/skills .agents/memories</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">2</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-2">Add agent guidelines</h3>
+          <p class="text-fg-dim text-xs mb-2">Compatible with the AGENTS.md standard.</p>
+          <div class="code-block rounded-md overflow-hidden">
+            <pre class="p-3 text-[13px] leading-relaxed"><code><span class="text-fg-dim"># .agents/agents.md</span>
+
+# Project Guidelines
+- Use TypeScript strict mode
+- Run `pnpm test` before every commit
+- Follow existing patterns</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">3</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-2">Configure MCP servers</h3>
+          <div class="code-block rounded-md overflow-hidden">
+            <pre class="p-3 text-[13px] leading-relaxed"><code><span class="text-fg-dim">// .agents/mcp.json</span>
+&#123;
+  <span class="text-accent-cyan">"mcpServers"</span>: &#123;
+    <span class="text-accent-amber">"filesystem"</span>: &#123;
+      <span class="text-accent-cyan">"command"</span>: <span class="text-accent-amber">"npx"</span>,
+      <span class="text-accent-cyan">"args"</span>: [<span class="text-accent-amber">"@mcp/server-filesystem"</span>, <span class="text-accent-amber">"."</span>]
+    &#125;
+  &#125;
+&#125;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-fg-dim text-xs border border-border rounded-sm">4</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-2">Add skills as needed</h3>
+          <div class="code-block rounded-md overflow-hidden">
+            <pre class="p-3 text-[13px] leading-relaxed"><code><span class="text-fg-dim"># .agents/skills/deploy/skill.md</span>
+<span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Deploy to Production</span>
+<span class="text-accent-cyan">description</span>: <span class="text-accent-amber">Our deployment workflow</span>
+<span class="text-fg-dim">---</span>
+
+1. Run `pnpm test`
+2. Build with `pnpm build`
+3. Deploy via `./scripts/deploy.sh`</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 w-6 h-6 flex items-center justify-center text-accent-green text-xs border border-border rounded-sm">✓</div>
+        <div class="flex-1">
+          <h3 class="text-fg font-bold text-[13px] mb-1">Commit and share</h3>
+          <p class="text-fg-muted text-xs">Your <code class="text-accent-cyan">.agents/</code> directory is now a portable, version-controlled agent configuration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

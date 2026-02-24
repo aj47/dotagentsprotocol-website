@@ -1,0 +1,57 @@
+---
+---
+<section id="overview" class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-lg font-bold text-white mb-1 font-sans">1. Overview</h2>
+    <p class="text-fg-dim text-xs mb-8">Why another convention?</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Problem -->
+      <div class="spec-card rounded-md p-5">
+        <h3 class="text-xs font-bold text-fg-muted uppercase tracking-wider mb-4">Problem: Fragmentation</h3>
+        <ul class="space-y-3 text-fg-muted text-[13px]">
+          <li class="flex items-start gap-2">
+            <span class="text-accent-rose shrink-0">×</span>
+            <span><span class="text-fg">MCP</span> config in one place, <span class="text-fg">AGENTS.md</span> in another, skills scattered as vendor files</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-rose shrink-0">×</span>
+            <span>Vendor lock-in: <code class="text-fg-dim">.cursor/</code> <code class="text-fg-dim">.claude/</code> <code class="text-fg-dim">.github/copilot-instructions.md</code></span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-rose shrink-0">×</span>
+            <span>No way to version-control or share a complete agent configuration</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-rose shrink-0">×</span>
+            <span>Agent knowledge (memories, skills) lost between tools and sessions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Solution -->
+      <div class="spec-card rounded-md p-5">
+        <h3 class="text-xs font-bold text-fg-muted uppercase tracking-wider mb-4">Solution: .agents/</h3>
+        <ul class="space-y-3 text-fg-muted text-[13px]">
+          <li class="flex items-start gap-2">
+            <span class="text-accent-green shrink-0">→</span>
+            <span><span class="text-fg">One directory</span> (<code class="text-accent-cyan">.agents/</code>) houses everything an agent needs</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-green shrink-0">→</span>
+            <span><span class="text-fg">Vendor-neutral</span> — works with any AI tool, editor, or agent framework</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-green shrink-0">→</span>
+            <span><span class="text-fg">Git-friendly</span> — commit, diff, branch, and share entire agent configs</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-green shrink-0">→</span>
+            <span><span class="text-fg">Layered</span> — global at <code class="text-accent-cyan">~/.agents/</code>, workspace at <code class="text-accent-cyan">./.agents/</code></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+

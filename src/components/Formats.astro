@@ -1,0 +1,83 @@
+---
+---
+<section id="formats" class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-lg font-bold text-white mb-1 font-sans">4. File Formats</h2>
+    <p class="text-fg-dim text-xs mb-8">Simple frontmatter + markdown for content. Plain JSON for config. No YAML dependency.</p>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <!-- Skill -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">skills/code-review/skill.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">code-review</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Code Review Expert</span>
+<span class="text-accent-cyan">description</span>: <span class="text-accent-amber">Thorough code review</span>
+<span class="text-accent-cyan">enabled</span>: <span class="text-accent-blue">true</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">Review code changes for:</span>
+<span class="text-fg-muted">- Security vulnerabilities</span>
+<span class="text-fg-muted">- Performance implications</span>
+<span class="text-fg-muted">- Test coverage gaps</span></code></pre>
+      </div>
+
+      <!-- Memory -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">memories/arch-decisions.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">arch_001</span>
+<span class="text-accent-cyan">title</span>: <span class="text-accent-amber">Database Architecture</span>
+<span class="text-accent-cyan">content</span>: <span class="text-accent-amber">PostgreSQL with Drizzle ORM</span>
+<span class="text-accent-cyan">importance</span>: <span class="text-accent-blue">high</span>
+<span class="text-accent-cyan">tags</span>: <span class="text-accent-amber">database, architecture, orm</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">We chose PostgreSQL over MongoDB for</span>
+<span class="text-fg-muted">relational data integrity and complex</span>
+<span class="text-fg-muted">query support across billing.</span></code></pre>
+      </div>
+
+      <!-- MCP -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">mcp.json</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code>&#123;
+  <span class="text-accent-cyan">"mcpServers"</span>: &#123;
+    <span class="text-accent-amber">"filesystem"</span>: &#123;
+      <span class="text-accent-cyan">"command"</span>: <span class="text-accent-amber">"npx"</span>,
+      <span class="text-accent-cyan">"args"</span>: [<span class="text-accent-amber">"@mcp/server-filesystem"</span>],
+      <span class="text-accent-cyan">"transport"</span>: <span class="text-accent-amber">"stdio"</span>
+    &#125;,
+    <span class="text-accent-amber">"github"</span>: &#123;
+      <span class="text-accent-cyan">"url"</span>: <span class="text-accent-amber">"https://api.github.com/mcp"</span>,
+      <span class="text-accent-cyan">"transport"</span>: <span class="text-accent-amber">"streamable-http"</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+      </div>
+
+      <!-- agents.md -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">agents.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">kind</span>: <span class="text-accent-amber">agents</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg"># Project Guidelines</span>
+
+<span class="text-fg-muted">## Build &amp; Test</span>
+<span class="text-fg-muted">- Use `pnpm` for package management</span>
+<span class="text-fg-muted">- Run `pnpm test` before committing</span>
+<span class="text-fg-muted">- TypeScript strict mode required</span></code></pre>
+      </div>
+    </div>
+
+    <!-- Frontmatter note -->
+    <div class="mt-6 spec-card rounded-md p-4 text-xs text-fg-muted leading-relaxed">
+      <span class="text-fg">Frontmatter format:</span> Uses <code class="text-accent-cyan">---</code> fences with simple <code class="text-accent-cyan">key: value</code> lines.
+      Not full YAML — no external dependencies. Values can be quoted. List fields accept CSV (<code class="text-accent-cyan">tags: a, b, c</code>)
+      or JSON arrays (<code class="text-accent-cyan">tags: ["a", "b"]</code>). Keys are sorted deterministically for clean diffs.
+    </div>
+  </div>
+</section>
+

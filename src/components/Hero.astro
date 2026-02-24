@@ -1,0 +1,57 @@
+---
+---
+<section class="pt-24 pb-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Spec header -->
+    <div class="mb-10">
+      <div class="text-fg-dim text-xs mb-4 flex items-center gap-3">
+        <span>DRAFT</span>
+        <span class="text-border">·</span>
+        <span>2026-02-24</span>
+        <span class="text-border">·</span>
+        <span>dotagentsprotocol.com</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-3 font-sans tracking-tight">
+        .agents Protocol
+      </h1>
+      <p class="text-fg-muted text-base leading-relaxed max-w-2xl">
+        An open directory convention for AI agent configuration. One place for
+        <span class="text-accent-blue">MCP</span> tools,
+        <span class="text-accent-green">AGENTS.md</span> instructions,
+        <span class="text-accent-amber">Skills</span>,
+        <span class="text-accent-rose">Memories</span>,
+        and model config — in plain, version-controllable files.
+      </p>
+    </div>
+
+    <!-- Directory diagram -->
+    <div class="code-block rounded-md overflow-hidden">
+      <div class="px-4 py-2 border-b border-border text-fg-dim text-xs flex items-center justify-between">
+        <span>~/.agents/</span>
+        <span>directory layout</span>
+      </div>
+      <pre class="p-5 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">$</span> tree .agents/
+
+<span class="text-white">.agents/</span>
+├── <span class="text-accent-green">agents.md</span>            <span class="text-fg-dim"># instructions (AGENTS.md compatible)</span>
+├── <span class="text-accent-green">system-prompt.md</span>     <span class="text-fg-dim"># system prompt</span>
+├── <span class="text-accent-blue">mcp.json</span>             <span class="text-fg-dim"># MCP server configuration</span>
+├── <span class="text-accent-blue">models.json</span>          <span class="text-fg-dim"># model presets &amp; provider keys</span>
+├── <span class="text-accent-amber">skills/</span>
+│   └── code-review/
+│       └── <span class="text-accent-amber">skill.md</span>    <span class="text-fg-dim"># skill definition</span>
+└── <span class="text-accent-rose">memories/</span>
+    └── <span class="text-accent-rose">project-arch.md</span>  <span class="text-fg-dim"># persistent memory</span></code></pre>
+    </div>
+
+    <!-- Quick links -->
+    <div class="mt-6 flex items-center gap-4 text-xs">
+      <a href="#overview" class="text-accent-cyan hover:text-white">§ overview</a>
+      <a href="#ecosystem" class="text-accent-cyan hover:text-white">§ ecosystem</a>
+      <a href="#structure" class="text-accent-cyan hover:text-white">§ structure</a>
+      <a href="#formats" class="text-accent-cyan hover:text-white">§ formats</a>
+      <a href="#get-started" class="text-accent-cyan hover:text-white">§ get started</a>
+    </div>
+  </div>
+</section>
+

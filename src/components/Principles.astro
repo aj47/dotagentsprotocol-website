@@ -1,0 +1,46 @@
+---
+---
+<section id="principles" class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-lg font-bold text-white mb-1 font-sans">5. Design Principles</h2>
+    <p class="text-fg-dim text-xs mb-8">Constraints that shaped the protocol.</p>
+
+    <div class="spec-card rounded-md overflow-hidden">
+      <table class="w-full text-[13px]">
+        <thead>
+          <tr class="border-b border-border text-fg-dim text-xs text-left">
+            <th class="px-4 py-2 font-normal w-48">Principle</th>
+            <th class="px-4 py-2 font-normal">Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border-light">
+            <td class="px-4 py-3 text-accent-blue font-bold">Human-readable</td>
+            <td class="px-4 py-3 text-fg-muted">Plain JSON and Markdown only. No binary formats, no proprietary schemas. Open any file in a text editor.</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="px-4 py-3 text-accent-green font-bold">Version-controllable</td>
+            <td class="px-4 py-3 text-fg-muted">Deterministic key sorting for clean diffs. Commit entire agent config to git — review, branch, collaborate.</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="px-4 py-3 text-accent-amber font-bold">Portable</td>
+            <td class="px-4 py-3 text-fg-muted">Relative paths, no vendor lock-in. Share as profile packs, transfer between machines, distribute as packages.</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="px-4 py-3 text-accent-rose font-bold">Safe by default</td>
+            <td class="px-4 py-3 text-fg-muted">Atomic writes (temp+rename). Timestamped backups with rotation. Auto-recovery from parse failures. Workspace layer only discovered if already present.</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="px-4 py-3 text-accent-keyword font-bold">Layered</td>
+            <td class="px-4 py-3 text-fg-muted">Global defaults at ~/.agents, workspace overrides at ./.agents. Shallow merge for configs, ID-based merge for skills and memories.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 text-accent-cyan font-bold">Extensible</td>
+            <td class="px-4 py-3 text-fg-muted">Add new config files without breaking existing ones. Simple frontmatter avoids YAML dependency bloat.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+

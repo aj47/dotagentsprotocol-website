@@ -1,0 +1,97 @@
+---
+const standards = [
+  {
+    name: 'MCP',
+    full: 'Model Context Protocol',
+    by: 'Anthropic · Linux Foundation',
+    desc: 'Open standard for connecting AI to external tools and data. Agents discover and invoke tools via stdio, HTTP, or WebSocket.',
+    file: 'mcp.json',
+    link: 'https://modelcontextprotocol.io',
+    color: 'text-accent-blue',
+  },
+  {
+    name: 'AGENTS.md',
+    full: 'Agent Instructions',
+    by: 'OpenAI · Linux Foundation',
+    desc: 'Simple markdown format for guiding coding agents. Build steps, conventions, project-specific instructions.',
+    file: 'agents.md',
+    link: 'https://agents.md',
+    color: 'text-accent-green',
+  },
+  {
+    name: 'Skills',
+    full: 'Agent Skills Spec',
+    by: 'Anthropic',
+    desc: 'Codified procedural knowledge. Instruction files that teach agents specific tasks. Composable and portable.',
+    file: 'skills/*/skill.md',
+    link: 'https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills',
+    color: 'text-accent-amber',
+  },
+  {
+    name: 'ACP',
+    full: 'Agent Client Protocol',
+    by: 'Zed Industries',
+    desc: 'Open standard for agent-to-editor communication. Any ACP agent integrates with any compatible editor.',
+    file: 'agent profiles',
+    link: 'https://zed.dev/acp',
+    color: 'text-accent-keyword',
+  },
+  {
+    name: 'Memories',
+    full: 'Persistent Agent Memory',
+    by: '.agents protocol',
+    desc: 'Structured memory entries that persist across sessions. Tagged, searchable, importance-ranked.',
+    file: 'memories/*.md',
+    link: '#formats',
+    color: 'text-accent-rose',
+  },
+]
+---
+
+<section id="ecosystem" class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-lg font-bold text-white mb-1 font-sans">2. Ecosystem</h2>
+    <p class="text-fg-dim text-xs mb-8">Five open standards. One directory.</p>
+
+    <!-- Diagram-style table -->
+    <div class="spec-card rounded-md overflow-hidden">
+      <div class="px-4 py-2 border-b border-border text-fg-dim text-xs flex items-center justify-between">
+        <span>standards mapping</span>
+        <span>.agents/ ← convergence point</span>
+      </div>
+      <table class="w-full text-[13px]">
+        <thead>
+          <tr class="border-b border-border text-fg-dim text-xs text-left">
+            <th class="px-4 py-2 font-normal">Standard</th>
+            <th class="px-4 py-2 font-normal hidden sm:table-cell">Steward</th>
+            <th class="px-4 py-2 font-normal hidden md:table-cell">Purpose</th>
+            <th class="px-4 py-2 font-normal text-right">Maps to</th>
+          </tr>
+        </thead>
+        <tbody>
+          {standards.map((s, i) => (
+            <tr class={`border-b border-border-light hover:bg-[#1a1a1a] ${i === standards.length - 1 ? 'border-b-0' : ''}`}>
+              <td class="px-4 py-3">
+                <a href={s.link} target={s.link.startsWith('http') ? '_blank' : undefined} rel={s.link.startsWith('http') ? 'noopener' : undefined} class={`${s.color} hover:text-white font-bold`}>
+                  {s.name}
+                  {s.link.startsWith('http') && <span class="text-fg-dim font-normal"> ↗</span>}
+                </a>
+                <div class="text-fg-dim text-xs mt-0.5 sm:hidden">{s.by}</div>
+              </td>
+              <td class="px-4 py-3 text-fg-dim hidden sm:table-cell">{s.by}</td>
+              <td class="px-4 py-3 text-fg-muted hidden md:table-cell">{s.desc}</td>
+              <td class="px-4 py-3 text-right"><code class="text-accent-cyan text-xs">{s.file}</code></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Architecture note -->
+    <div class="mt-6 text-fg-dim text-xs leading-relaxed">
+      <span class="text-fg-muted">Note:</span> The .agents/ directory is a convergence point, not a replacement.
+      Each standard retains its own specification. This protocol defines how they coexist as files in a single, predictable location.
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,83 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Uses system fonts: monospace for code, sans-serif for title -->
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+
+  <!-- Border -->
+  <rect x="0.5" y="0.5" width="1199" height="629" rx="0" fill="none" stroke="#262626" stroke-width="1"/>
+
+  <!-- Grid lines (subtle) -->
+  <line x1="0" y1="60" x2="1200" y2="60" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="0" y1="570" x2="1200" y2="570" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="720" y1="60" x2="720" y2="570" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Top bar -->
+  <text x="32" y="40" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">DRAFT · 2026-02-24 · dotagentsprotocol.com</text>
+  <text x="1168" y="40" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555" text-anchor="end">OPEN STANDARD</text>
+
+  <!-- Title -->
+  <text x="60" y="140" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="52" fill="#ffffff">.agents Protocol</text>
+  <text x="60" y="185" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#888">An open directory convention for AI agent configuration</text>
+
+  <!-- Standards labels -->
+  <text x="60" y="240" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">CONVERGES</text>
+
+  <text x="60" y="275" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="15" fill="#569cd6">MCP</text>
+  <text x="120" y="275" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">Model Context Protocol</text>
+
+  <text x="60" y="305" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="15" fill="#4ec9b0">AGENTS.md</text>
+  <text x="175" y="305" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">Agent Instructions</text>
+
+  <text x="60" y="335" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="15" fill="#ce9178">Skills</text>
+  <text x="135" y="335" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">Agent Skills Spec</text>
+
+  <text x="60" y="365" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="15" fill="#c586c0">ACP</text>
+  <text x="110" y="365" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">Agent Client Protocol</text>
+
+  <text x="60" y="395" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="15" fill="#d16969">Memories</text>
+  <text x="165" y="395" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">Persistent Agent Memory</text>
+
+  <!-- Arrow block -->
+  <text x="60" y="450" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" fill="#333">─────────────────────────→</text>
+
+  <!-- Connection lines from standards to tree -->
+  <line x1="480" y1="275" x2="720" y2="275" stroke="#262626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="480" y1="305" x2="720" y2="305" stroke="#262626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="480" y1="335" x2="720" y2="335" stroke="#262626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="480" y1="365" x2="720" y2="365" stroke="#262626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="480" y1="395" x2="720" y2="395" stroke="#262626" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Directory tree (right side) -->
+  <rect x="720" y="60" width="480" height="510" fill="#141414"/>
+
+  <text x="752" y="100" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">directory layout</text>
+
+  <text x="752" y="140" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="16" fill="#ffffff">.agents/</text>
+
+  <text x="752" y="175" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#4ec9b0">agents.md</tspan></text>
+  <text x="752" y="205" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#4ec9b0">system-prompt.md</tspan></text>
+  <text x="752" y="235" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#569cd6">mcp.json</tspan></text>
+  <text x="752" y="265" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#569cd6">models.json</tspan></text>
+  <text x="752" y="295" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#ce9178">skills/</tspan></text>
+  <text x="752" y="325" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">│   └── code-review/</text>
+  <text x="752" y="355" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">│       └── <tspan fill="#ce9178">skill.md</tspan></text>
+  <text x="752" y="385" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── <tspan fill="#d16969">memories/</tspan></text>
+  <text x="752" y="415" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">│   └── <tspan fill="#d16969">arch-decisions.md</tspan></text>
+  <text x="752" y="445" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">└── .backups/</text>
+
+  <!-- Merge order at bottom -->
+  <text x="60" y="490" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">MERGE ORDER</text>
+  <text x="60" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#555">defaults</text>
+  <text x="160" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#333">←</text>
+  <text x="185" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#555">config.json</text>
+  <text x="330" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#333">←</text>
+  <text x="355" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#9cdcfe">~/.agents</text>
+  <text x="480" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#333">←</text>
+  <text x="505" y="520" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#4ec9b0">./.agents</text>
+
+  <!-- Bottom bar -->
+  <text x="32" y="600" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#333">human-readable · version-controllable · portable · vendor-neutral</text>
+  <text x="1168" y="600" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#333" text-anchor="end">github.com/aj47/speakmcp</text>
+</svg>
+
