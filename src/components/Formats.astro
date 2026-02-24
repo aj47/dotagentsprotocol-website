@@ -107,6 +107,24 @@
   &#125;
 &#125;</code></pre>
       </div>
+
+      <!-- Repeat Task -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">tasks/daily-code-review/task.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">kind</span>: <span class="text-accent-amber">task</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">daily-code-review</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Daily Code Review</span>
+<span class="text-accent-cyan">intervalMinutes</span>: <span class="text-accent-blue">60</span>
+<span class="text-accent-cyan">enabled</span>: <span class="text-accent-blue">true</span>
+<span class="text-accent-cyan">runOnStartup</span>: <span class="text-accent-blue">false</span>
+<span class="text-accent-cyan">profileId</span>: <span class="text-accent-amber">abc-123</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">Review all open pull requests and</span>
+<span class="text-fg-muted">summarize their status. Check for</span>
+<span class="text-fg-muted">any failing CI pipelines.</span></code></pre>
+      </div>
     </div>
 
     <!-- Frontmatter note -->
