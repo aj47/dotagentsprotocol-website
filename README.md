@@ -171,7 +171,7 @@ Add what you need incrementally — an `agents.md` for guidelines, `mcp.json` fo
 This specification is a draft. The protocol is open and evolving. If you're building AI tools, managing agents, or want portable config — contributions are welcome.
 
 - [GitHub](https://github.com/aj47/dotagentsprotocol-website)
-- [Discord](https://discord.gg/speakmcp)
+- [Discord](https://discord.com/invite/cK9WeQ7jPq)
 
 ## License
 
