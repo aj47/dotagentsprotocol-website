@@ -139,6 +139,93 @@ const totalComponents = sampleBundles.reduce(
             </div>
           </div>
         </div>
+
+        <div class="mt-8">
+          <div class="flex flex-col gap-2 mb-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Featured bundles</p>
+              <h2 class="text-fg font-bold font-sans">Start with the most shareable stacks</h2>
+            </div>
+            <p class="text-fg-muted text-[13px] max-w-xl">
+              Browse installable examples first, then dig into how publishing and install handoff work further down the page.
+            </p>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2">
+            {sampleBundles.map((bundle) => (
+              <article class="spec-card rounded-md p-5 flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-[11px] uppercase tracking-[0.18em] text-fg-dim mb-2">bundle · v{bundle.bundleVersion}</p>
+                    <h2 class="text-lg text-white font-sans font-semibold leading-snug">{bundle.name}</h2>
+                  </div>
+                  <span class="text-[11px] text-accent-teal whitespace-nowrap">
+                    {dateFormatter.format(new Date(bundle.updatedAt))}
+                  </span>
+                </div>
+
+                <p class="text-fg-muted text-[13px] leading-relaxed">{bundle.summary}</p>
+                <p class="text-fg-dim text-[12px] leading-relaxed">{bundle.description}</p>
+
+                <div class="text-xs text-fg-muted flex flex-wrap items-center gap-2">
+                  {bundle.author.url ? (
+                    <a href={bundle.author.url} target="_blank" rel="noopener" class="hover:text-fg">
+                      {bundle.author.displayName}
+                    </a>
+                  ) : (
+                    <span>{bundle.author.displayName}</span>
+                  )}
+                  {bundle.author.handle && <span class="text-accent-cyan">{bundle.author.handle}</span>}
+                  <span class="text-border">│</span>
+                  <span>{bundle.componentCounts.agentProfiles} agents</span>
+                  <span class="text-border">·</span>
+                  <span>{bundle.componentCounts.mcpServers} MCP</span>
+                  <span class="text-border">·</span>
+                  <span>{bundle.componentCounts.skills} skills</span>
+                </div>
+
+                <div class="text-xs text-fg-dim flex flex-wrap items-center gap-2">
+                  <span>{bundle.componentCounts.repeatTasks} tasks</span>
+                  <span class="text-border">·</span>
+                  <span>{bundle.componentCounts.memories} memories</span>
+                  <span class="text-border">·</span>
+                  <span>published {dateFormatter.format(new Date(bundle.publishedAt))}</span>
+                </div>
+
+                {bundle.compatibility && (
+                  <div class="rounded-md border border-border bg-bg px-3 py-3 text-[12px] leading-relaxed">
+                    <p class="text-fg mb-1">Compatibility</p>
+                    {bundle.compatibility.minDesktopVersion && (
+                      <p class="text-fg-dim">min desktop version: {bundle.compatibility.minDesktopVersion}</p>
+                    )}
+                    {bundle.compatibility.notes?.map((note) => (
+                      <p class="text-fg-dim">• {note}</p>
+                    ))}
+                  </div>
+                )}
+
+                <div class="flex flex-wrap gap-2 text-[11px]">
+                  {bundle.tags.map((tag) => (
+                    <span class="rounded-full border border-border px-2.5 py-1 text-fg-muted">{tag}</span>
+                  ))}
+                </div>
+
+                <div class="mt-auto flex items-center justify-between gap-4 border-t border-border pt-4 text-xs">
+                  <div class="text-fg-dim">
+                    <div>{bundle.artifact.fileName}</div>
+                    <div>{Math.round(bundle.artifact.sizeBytes / 1024)} KB bundle</div>
+                  </div>
+                  <a
+                    href={installHref(bundle.artifact.url)}
+                    class="rounded-md border border-accent-cyan px-3 py-2 text-accent-cyan hover:text-white hover:border-white transition-colors"
+                  >
+                    Install bundle →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
 
@@ -176,7 +263,7 @@ const totalComponents = sampleBundles.reduce(
       </div>
     </section>
 
-    <section class="py-10">
+    <section class="py-10 border-b border-border">
       <div class="max-w-4xl mx-auto px-6">
         <div class="grid gap-4 mb-6 md:grid-cols-2">
           <div class="spec-card rounded-md p-5">
@@ -198,81 +285,6 @@ const totalComponents = sampleBundles.reduce(
 
 Publish once, install anywhere.</code></pre>
           </div>
-        </div>
-
-        <div class="grid gap-5 md:grid-cols-2">
-          {sampleBundles.map((bundle) => (
-            <article class="spec-card rounded-md p-5 flex flex-col gap-4">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-[11px] uppercase tracking-[0.18em] text-fg-dim mb-2">bundle · v{bundle.bundleVersion}</p>
-                  <h2 class="text-lg text-white font-sans font-semibold leading-snug">{bundle.name}</h2>
-                </div>
-                <span class="text-[11px] text-accent-teal whitespace-nowrap">
-                  {dateFormatter.format(new Date(bundle.updatedAt))}
-                </span>
-              </div>
-
-              <p class="text-fg-muted text-[13px] leading-relaxed">{bundle.summary}</p>
-              <p class="text-fg-dim text-[12px] leading-relaxed">{bundle.description}</p>
-
-              <div class="text-xs text-fg-muted flex flex-wrap items-center gap-2">
-                {bundle.author.url ? (
-                  <a href={bundle.author.url} target="_blank" rel="noopener" class="hover:text-fg">
-                    {bundle.author.displayName}
-                  </a>
-                ) : (
-                  <span>{bundle.author.displayName}</span>
-                )}
-                {bundle.author.handle && <span class="text-accent-cyan">{bundle.author.handle}</span>}
-                <span class="text-border">│</span>
-                <span>{bundle.componentCounts.agentProfiles} agents</span>
-                <span class="text-border">·</span>
-                <span>{bundle.componentCounts.mcpServers} MCP</span>
-                <span class="text-border">·</span>
-                <span>{bundle.componentCounts.skills} skills</span>
-              </div>
-
-              <div class="text-xs text-fg-dim flex flex-wrap items-center gap-2">
-                <span>{bundle.componentCounts.repeatTasks} tasks</span>
-                <span class="text-border">·</span>
-                <span>{bundle.componentCounts.memories} memories</span>
-                <span class="text-border">·</span>
-                <span>published {dateFormatter.format(new Date(bundle.publishedAt))}</span>
-              </div>
-
-              {bundle.compatibility && (
-                <div class="rounded-md border border-border bg-bg px-3 py-3 text-[12px] leading-relaxed">
-                  <p class="text-fg mb-1">Compatibility</p>
-                  {bundle.compatibility.minDesktopVersion && (
-                    <p class="text-fg-dim">min desktop version: {bundle.compatibility.minDesktopVersion}</p>
-                  )}
-                  {bundle.compatibility.notes?.map((note) => (
-                    <p class="text-fg-dim">• {note}</p>
-                  ))}
-                </div>
-              )}
-
-              <div class="flex flex-wrap gap-2 text-[11px]">
-                {bundle.tags.map((tag) => (
-                  <span class="rounded-full border border-border px-2.5 py-1 text-fg-muted">{tag}</span>
-                ))}
-              </div>
-
-              <div class="mt-auto flex items-center justify-between gap-4 border-t border-border pt-4 text-xs">
-                <div class="text-fg-dim">
-                  <div>{bundle.artifact.fileName}</div>
-                  <div>{Math.round(bundle.artifact.sizeBytes / 1024)} KB bundle</div>
-                </div>
-                <a
-                  href={installHref(bundle.artifact.url)}
-                  class="rounded-md border border-accent-cyan px-3 py-2 text-accent-cyan hover:text-white hover:border-white transition-colors"
-                >
-                  Install bundle →
-                </a>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
