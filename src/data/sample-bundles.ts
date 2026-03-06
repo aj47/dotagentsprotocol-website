@@ -1,0 +1,91 @@
+export interface DotAgentsBundle {
+  id: string
+  name: string
+  summary: string
+  description?: string
+  author: {
+    displayName: string
+    handle?: string
+    url?: string
+  }
+  tags: string[]
+  componentCounts: {
+    agentProfiles: number
+    mcpServers: number
+    skills: number
+  }
+  artifact: {
+    url: string
+    sizeBytes: number
+  }
+  publishedAt: string
+}
+
+export const sampleBundles: DotAgentsBundle[] = [
+  {
+    id: 'research-copilot-stack',
+    name: 'Research Copilot Stack',
+    summary: 'A ready-to-install bundle for literature review, source capture, and synthesis.',
+    description: 'Includes research-focused agents, citation MCP integrations, and note-taking skills for fast brief generation.',
+    author: { displayName: 'DotAgents Labs', handle: '@dotagents', url: 'https://dotagentsprotocol.com' },
+    tags: ['research', 'knowledge', 'workflow'],
+    componentCounts: { agentProfiles: 3, mcpServers: 2, skills: 4 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/research-copilot-stack.dotagents', sizeBytes: 182044 },
+    publishedAt: '2026-03-01T10:00:00.000Z',
+  },
+  {
+    id: 'agentops-starter-kit',
+    name: 'AgentOps Starter Kit',
+    summary: 'Monitoring, tracing, and production-safe agent defaults in one portable package.',
+    description: 'Designed for teams shipping multi-agent systems with observability hooks, guardrails, and reusable runbooks.',
+    author: { displayName: 'AJ', handle: '@techfren', url: 'https://github.com/aj47' },
+    tags: ['ops', 'observability', 'teams'],
+    componentCounts: { agentProfiles: 2, mcpServers: 3, skills: 2 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/agentops-starter-kit.dotagents', sizeBytes: 248912 },
+    publishedAt: '2026-02-27T16:20:00.000Z',
+  },
+  {
+    id: 'creator-growth-lab',
+    name: 'Creator Growth Lab',
+    summary: 'Agent bundles for content ideation, audience research, and post optimization.',
+    description: 'Ships a content strategist agent, trend discovery MCP servers, and reusable publishing skills.',
+    author: { displayName: 'Creator Guild', handle: '@creatorguild' },
+    tags: ['marketing', 'content', 'social'],
+    componentCounts: { agentProfiles: 4, mcpServers: 1, skills: 5 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/creator-growth-lab.dotagents', sizeBytes: 219774 },
+    publishedAt: '2026-02-24T09:45:00.000Z',
+  },
+  {
+    id: 'local-dev-automator',
+    name: 'Local Dev Automator',
+    summary: 'A desktop-first bundle for coding workflows, terminal tools, and repo-aware automation.',
+    description: 'Pairs engineering agents with local MCP servers and repeatable coding skills for day-to-day development work.',
+    author: { displayName: 'Protocol Builders', handle: '@builders' },
+    tags: ['development', 'automation', 'desktop'],
+    componentCounts: { agentProfiles: 3, mcpServers: 4, skills: 3 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/local-dev-automator.dotagents', sizeBytes: 307115 },
+    publishedAt: '2026-02-19T12:30:00.000Z',
+  },
+  {
+    id: 'support-escalation-pack',
+    name: 'Support Escalation Pack',
+    summary: 'Triage incoming issues, enrich context, and hand off complex cases to the right specialist agent.',
+    description: 'Built for customer-facing teams who need repeatable escalation flows with tooling and memory support.',
+    author: { displayName: 'Service Desk Collective', handle: '@servicedesk' },
+    tags: ['support', 'triage', 'operations'],
+    componentCounts: { agentProfiles: 2, mcpServers: 2, skills: 4 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/support-escalation-pack.dotagents', sizeBytes: 167508 },
+    publishedAt: '2026-02-16T08:15:00.000Z',
+  },
+  {
+    id: 'design-critique-crew',
+    name: 'Design Critique Crew',
+    summary: 'A collaborative bundle for interface reviews, accessibility checks, and UX iteration.',
+    description: 'Combines design-review agents with MCP-backed screenshot tooling and UI critique skills.',
+    author: { displayName: 'Interface Foundry', handle: '@foundry' },
+    tags: ['design', 'ux', 'accessibility'],
+    componentCounts: { agentProfiles: 3, mcpServers: 2, skills: 3 },
+    artifact: { url: 'https://hub.dotagentsprotocol.com/bundles/design-critique-crew.dotagents', sizeBytes: 194332 },
+    publishedAt: '2026-02-11T14:05:00.000Z',
+  },
+]
