@@ -1,0 +1,51 @@
+---
+const hubUrl = 'https://hub.dotagentsprotocol.com'
+---
+
+<section class="py-16 border-b border-border">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="spec-card rounded-md p-6 md:p-7">
+      <div class="flex flex-col lg:flex-row gap-6 lg:items-start lg:justify-between">
+        <div class="max-w-2xl">
+          <p class="text-fg-dim text-xs mb-3 uppercase tracking-[0.18em]">Hub</p>
+          <h2 class="text-lg font-bold text-white mb-3 font-sans">Share installable <span class="text-accent-cyan">.dotagents</span> bundles.</h2>
+          <p class="text-fg-muted text-[13px] leading-relaxed mb-4">
+            The DotAgents Hub is the public catalog for portable agent setups. Publish public-safe bundles with
+            summary, author, tags, and compatibility metadata — then let anyone install them through the desktop app.
+          </p>
+
+          <div class="grid gap-3 sm:grid-cols-3 text-[12px]">
+            <div class="rounded-md border border-border bg-bg px-4 py-3">
+              <p class="text-fg mb-1">Publish metadata</p>
+              <p class="text-fg-dim">Summary, author, tags, and optional compatibility notes.</p>
+            </div>
+            <div class="rounded-md border border-border bg-bg px-4 py-3">
+              <p class="text-fg mb-1">Public-safe defaults</p>
+              <p class="text-fg-dim">Agents, MCP, and skills on by default. Memories and repeat tasks opt-in.</p>
+            </div>
+            <div class="rounded-md border border-border bg-bg px-4 py-3">
+              <p class="text-fg mb-1">Install handoff</p>
+              <p class="text-fg-dim">Download a bundle and open it directly in the desktop app.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-0 lg:max-w-[22rem] code-block rounded-md overflow-hidden">
+          <div class="px-4 py-2 border-b border-border text-fg-dim text-xs flex items-center justify-between">
+            <span>hub.dotagentsprotocol.com</span>
+            <span>sharing flow</span>
+          </div>
+          <pre class="p-4 text-[12px] leading-relaxed overflow-x-auto"><code>publish bundle
+├── public metadata
+├── .dotagents artifact
+└── install from Hub</code></pre>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs">
+        <a href={hubUrl} class="text-accent-cyan hover:text-white">Explore the Hub →</a>
+        <a href="#formats" class="text-fg-muted hover:text-fg">Review bundle formats →</a>
+      </div>
+    </div>
+  </div>
+</section>

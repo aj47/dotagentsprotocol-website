@@ -4,11 +4,13 @@ import '../styles/global.css'
 interface Props {
   title?: string
   description?: string
+  url?: string
 }
 
 const {
   title = '.agents Protocol — The Open Standard for AI Agent Configuration',
   description = 'A unified, open standard for AI agent configuration. One directory to bring together MCP tools, AGENTS.md instructions, Skills, Memories, and more.',
+  url = 'https://dotagentsprotocol.com',
 } = Astro.props
 ---
 
@@ -18,10 +20,11 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dotagentsprotocol.com" />
+    <meta property="og:url" content={url} />
     <meta property="og:image" content="https://dotagentsprotocol.com/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
