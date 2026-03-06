@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout.astro'
 import { sampleBundles } from '../data/sample-bundles'
 
 const installHref = (bundleUrl: string) => `dotagents://install?bundle=${encodeURIComponent(bundleUrl)}`
-const filterTags = [...new Set(sampleBundles.flatMap((bundle) => bundle.tags))].slice(0, 8)
 const dateFormatter = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' })
 const totalComponents = sampleBundles.reduce(
   (acc, bundle) => {
@@ -28,7 +27,7 @@ const totalComponents = sampleBundles.reduce(
   <Nav />
 
   <main class="pt-24">
-    <section class="border-b border-border pb-12">
+    <section class="border-b border-border pb-6">
       <div class="max-w-4xl mx-auto px-6">
         <div class="text-fg-dim text-xs mb-4 flex items-center gap-3">
           <span>PUBLIC CATALOG</span>
@@ -38,109 +37,21 @@ const totalComponents = sampleBundles.reduce(
         <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4 font-sans tracking-tight">
           .agents Hub
         </h1>
-        <p class="text-fg-muted text-base leading-relaxed max-w-3xl mb-6">
-          The public catalog for installable <span class="text-accent-cyan">.dotagents</span>
-          bundles. Publish from the desktop app with summary, author, tags, and compatibility
-          metadata — then share a portable bundle anyone can install.
-        </p>
-
-        <div class="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)]">
-          <div class="code-block rounded-md overflow-hidden">
-            <div class="px-4 py-2 border-b border-border text-fg-dim text-xs flex items-center justify-between">
-              <span>publish flow</span>
-              <span>public metadata + artifact</span>
-            </div>
-            <pre class="p-5 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-white">catalogItem</span>
-├── summary / author / tags
-├── optional compatibility notes
-├── public-safe component counts
-└── <span class="text-accent-cyan">artifact.fileName</span> + sizeBytes
-
-<span class="text-white">bundle artifact</span>
-└── example-stack.dotagents</code></pre>
-          </div>
-
-          <div class="spec-card rounded-md p-5 grid gap-3 text-[13px]">
-            <div>
-              <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Registry snapshot</p>
-              <h2 class="text-fg font-bold font-sans">Portable sharing for .dotagents bundles</h2>
-            </div>
-            <p class="text-fg-muted">
-              Public-safe by default: publish agent profiles, MCP servers, and skills. Repeat tasks and memories stay opt-in.
-            </p>
-            <div class="grid grid-cols-2 gap-3 text-xs">
-              <div class="rounded-md border border-border bg-bg px-3 py-3">
-                <div class="text-fg">{sampleBundles.length} bundles</div>
-                <div class="text-fg-dim mt-1">sample catalog entries</div>
-              </div>
-              <div class="rounded-md border border-border bg-bg px-3 py-3">
-                <div class="text-fg">v1 bundle metadata</div>
-                <div class="text-fg-dim mt-1">portable, inspectable JSON</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="border-b border-border py-8">
+    <section class="border-b border-border py-4">
       <div class="max-w-4xl mx-auto px-6">
-        <div class="grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
-          <div class="spec-card rounded-md p-5">
-            <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mb-4">
-              <div>
-                <h2 class="text-fg font-bold font-sans mb-1">Search the registry</h2>
-                <p class="text-fg-muted text-[13px]">Static preview UI backed by catalog-shaped sample data.</p>
-              </div>
-              <span class="text-[11px] text-accent-teal">{sampleBundles.length} sample bundles</span>
-            </div>
-
-            <div class="grid gap-3 md:grid-cols-[minmax(0,1.5fr)_minmax(0,0.9fr)]">
-              <input
-                type="search"
-                placeholder="Search bundles, authors, or tags"
-                class="w-full rounded-md border border-border bg-bg px-4 py-3 text-fg placeholder:text-fg-dim outline-none focus:border-accent-cyan"
-              />
-              <select class="rounded-md border border-border bg-bg px-4 py-3 text-fg outline-none focus:border-accent-cyan">
-                <option>All bundle types</option>
-                <option>Public-safe defaults</option>
-                <option>Includes repeat tasks</option>
-                <option>Includes memories</option>
-              </select>
-            </div>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              {filterTags.map((tag) => (
-                <button type="button" class="rounded-full border border-border px-3 py-1 text-fg-muted hover:text-fg hover:border-border-light">
-                  #{tag}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div class="spec-card rounded-md p-5">
-            <div>
-              <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Public artifact defaults</p>
-              <h2 class="text-fg font-bold font-sans mb-3">What is shareable by default?</h2>
-            </div>
-            <div class="space-y-3 text-[13px]">
-              <div class="rounded-md border border-border bg-bg px-4 py-3">
-                <p class="text-fg">Included</p>
-                <p class="text-fg-dim mt-1">Agent profiles, MCP servers, and skills.</p>
-              </div>
-              <div class="rounded-md border border-border bg-bg px-4 py-3">
-                <p class="text-fg">Opt-in</p>
-                <p class="text-fg-dim mt-1">Repeat tasks and memories only when explicitly enabled.</p>
-              </div>
-              <div class="rounded-md border border-border bg-bg px-4 py-3">
-                <p class="text-fg">Stripped automatically</p>
-                <p class="text-fg-dim mt-1">Secrets and API keys are removed before sharing.</p>
-              </div>
-            </div>
-          </div>
+        <div class="spec-card rounded-md p-3">
+          <input
+            id="hub-search"
+            type="search"
+            placeholder="Search bundles, authors, or tags"
+            class="w-full rounded-md border border-border bg-bg px-4 py-2 text-[13px] text-fg placeholder:text-fg-dim outline-none focus:border-accent-cyan"
+          />
         </div>
 
-        <div class="mt-8">
+        <div class="mt-6">
           <div class="flex flex-col gap-2 mb-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Featured bundles</p>
@@ -151,9 +62,13 @@ const totalComponents = sampleBundles.reduce(
             </p>
           </div>
 
-          <div class="grid gap-5 md:grid-cols-2">
+          <div id="hub-results" class="grid gap-5 md:grid-cols-2">
             {sampleBundles.map((bundle) => (
-              <article class="spec-card rounded-md p-5 flex flex-col gap-4">
+              <article
+                class="spec-card rounded-md p-5 flex flex-col gap-4"
+                data-bundle-card
+                data-searchable-text={[bundle.name, bundle.summary, bundle.description, bundle.author.displayName, bundle.author.handle ?? '', ...bundle.tags].join(' ').toLowerCase()}
+              >
                 <div class="flex items-start justify-between gap-4">
                   <div>
                     <p class="text-[11px] uppercase tracking-[0.18em] text-fg-dim mb-2">bundle · v{bundle.bundleVersion}</p>
@@ -192,32 +107,14 @@ const totalComponents = sampleBundles.reduce(
                   <span>published {dateFormatter.format(new Date(bundle.publishedAt))}</span>
                 </div>
 
-                {bundle.compatibility && (
-                  <div class="rounded-md border border-border bg-bg px-3 py-3 text-[12px] leading-relaxed">
-                    <p class="text-fg mb-1">Compatibility</p>
-                    {bundle.compatibility.minDesktopVersion && (
-                      <p class="text-fg-dim">min desktop version: {bundle.compatibility.minDesktopVersion}</p>
-                    )}
-                    {bundle.compatibility.notes?.map((note) => (
-                      <p class="text-fg-dim">• {note}</p>
-                    ))}
-                  </div>
-                )}
-
-                <div class="flex flex-wrap gap-2 text-[11px]">
-                  {bundle.tags.map((tag) => (
-                    <span class="rounded-full border border-border px-2.5 py-1 text-fg-muted">{tag}</span>
-                  ))}
-                </div>
-
-                <div class="mt-auto flex items-center justify-between gap-4 border-t border-border pt-4 text-xs">
-                  <div class="text-fg-dim">
-                    <div>{bundle.artifact.fileName}</div>
+                <div class="mt-auto flex items-start justify-between gap-4 border-t border-border pt-4 text-xs">
+                  <div class="min-w-0 flex-1 text-fg-dim">
+                    <div class="break-all">{bundle.artifact.fileName}</div>
                     <div>{Math.round(bundle.artifact.sizeBytes / 1024)} KB bundle</div>
                   </div>
                   <a
                     href={installHref(bundle.artifact.url)}
-                    class="rounded-md border border-accent-cyan px-3 py-2 text-accent-cyan hover:text-white hover:border-white transition-colors"
+                    class="shrink-0 whitespace-nowrap rounded-md border border-accent-cyan px-3 py-2 text-accent-cyan hover:text-white hover:border-white transition-colors"
                   >
                     Install bundle →
                   </a>
@@ -225,12 +122,53 @@ const totalComponents = sampleBundles.reduce(
               </article>
             ))}
           </div>
+
+          <p id="hub-empty-state" class="hidden mt-5 rounded-md border border-border bg-bg px-4 py-3 text-[13px] text-fg-dim">
+            No bundles match your search yet.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="border-b border-border py-8">
       <div class="max-w-4xl mx-auto px-6">
+        <div class="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] mb-8">
+          <div class="code-block rounded-md overflow-hidden">
+            <div class="px-4 py-2 border-b border-border text-fg-dim text-xs flex items-center justify-between">
+              <span>publish flow</span>
+              <span>public metadata + artifact</span>
+            </div>
+            <pre class="p-5 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-white">catalogItem</span>
+├── summary / author / tags
+├── optional compatibility notes
+├── public-safe component counts
+└── <span class="text-accent-cyan">artifact.fileName</span> + sizeBytes
+
+<span class="text-white">bundle artifact</span>
+└── example-stack.dotagents</code></pre>
+          </div>
+
+          <div class="spec-card rounded-md p-5 grid gap-3 text-[13px]">
+            <div>
+              <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Registry snapshot</p>
+              <h2 class="text-fg font-bold font-sans">Portable sharing for .dotagents bundles</h2>
+            </div>
+            <p class="text-fg-muted">
+              Public-safe by default: publish agent profiles, MCP servers, and skills. Repeat tasks and memories stay opt-in.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="rounded-md border border-border bg-bg px-3 py-3">
+                <div class="text-fg">{sampleBundles.length} bundles</div>
+                <div class="text-fg-dim mt-1">sample catalog entries</div>
+              </div>
+              <div class="rounded-md border border-border bg-bg px-3 py-3">
+                <div class="text-fg">v1 bundle metadata</div>
+                <div class="text-fg-dim mt-1">portable, inspectable JSON</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="grid gap-4 md:grid-cols-5">
           <div class="spec-card rounded-md p-4 md:col-span-2">
             <p class="text-fg-dim text-[11px] uppercase tracking-[0.18em] mb-2">Catalog totals</p>
@@ -311,6 +249,32 @@ Publish once, install anywhere.</code></pre>
       </div>
     </section>
   </main>
+
+  <script is:inline>
+    const searchInput = document.querySelector('#hub-search')
+    const cards = Array.from(document.querySelectorAll('[data-bundle-card]'))
+    const emptyState = document.querySelector('#hub-empty-state')
+
+    if (searchInput && cards.length) {
+      const applyFilter = () => {
+        const query = searchInput.value.trim().toLowerCase()
+        let visibleCount = 0
+
+        cards.forEach((card) => {
+          const haystack = card.getAttribute('data-searchable-text') || ''
+          const matches = !query || haystack.includes(query)
+          card.style.display = matches ? '' : 'none'
+          if (matches) visibleCount += 1
+        })
+
+        if (emptyState) {
+          emptyState.classList.toggle('hidden', visibleCount > 0)
+        }
+      }
+
+      searchInput.addEventListener('input', applyFilter)
+    }
+  </script>
 
   <Footer />
 </Layout>
