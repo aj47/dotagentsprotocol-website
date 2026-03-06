@@ -48,9 +48,9 @@ Two layers with overlay semantics. Workspace overrides global.
 | [AGENTS.md](https://agents.md) | OpenAI · Linux Foundation | `agents.md` | Markdown instructions for coding agents |
 | [Skills](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills) | Anthropic | `skills/*/skill.md` | Codified procedural knowledge |
 | [ACP](https://zed.dev/acp) | Zed Industries | agent profiles | Agent-to-editor communication |
-| Sub-Agents | .agents protocol | `agents/*/agent.md` | Declarative sub-agent profiles |
-| Tasks | .agents protocol | `tasks/*/task.md` | Scheduled repeat tasks |
-| Memories | .agents protocol | `memories/*.md` | Persistent agent memory |
+| Sub-Agents | .agents Protocol | `agents/*/agent.md` | Declarative sub-agent profiles |
+| Tasks | .agents Protocol | `tasks/*/task.md` | Scheduled repeat tasks |
+| Memories | .agents Protocol | `memories/*.md` | Persistent agent memory |
 
 ## File Formats
 

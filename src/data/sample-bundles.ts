@@ -36,7 +36,7 @@ export const sampleBundles: HubCatalogItem[] = [
     name: 'Research Copilot Stack',
     summary: 'A ready-to-install bundle for literature review, source capture, and synthesis.',
     description: 'Includes research-focused agents, citation MCP integrations, and note-taking skills for fast brief generation.',
-    author: { displayName: 'DotAgents Labs', handle: '@dotagents', url: 'https://dotagentsprotocol.com' },
+    author: { displayName: '.agents Labs', handle: '@dotagents', url: 'https://dotagentsprotocol.com' },
     tags: ['research', 'knowledge', 'workflow'],
     bundleVersion: 1,
     componentCounts: { agentProfiles: 3, mcpServers: 2, skills: 4, repeatTasks: 0, memories: 0 },
