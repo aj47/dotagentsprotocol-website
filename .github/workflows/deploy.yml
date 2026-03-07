@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - main
-      - add-hub-page
   workflow_dispatch:
 
 jobs:
   deploy-protocol:
     name: Deploy dotagentsprotocol.com
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,9 +32,9 @@ jobs:
         with:
           node-version: '20'
       - run: npm install -g pnpm && pnpm install
-      - run: pnpm build
+      - run: pnpm build:hub
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=dotagentsprotocol-hub
+          command: pages deploy dist-hub --project-name=dotagentsprotocol-hub

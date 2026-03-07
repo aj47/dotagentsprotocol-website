@@ -7,7 +7,9 @@
     "generate-og": "node scripts/generate-og.mjs",
     "build": "node scripts/generate-og.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "build:hub": "node scripts/build-hub.mjs",
+    "deploy:hub": "node scripts/build-hub.mjs && wrangler pages deploy dist-hub --project-name=dotagentsprotocol-hub --branch=main"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
