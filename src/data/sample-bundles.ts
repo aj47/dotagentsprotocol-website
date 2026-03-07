@@ -1,0 +1,151 @@
+export interface HubCatalogItem {
+  id: string
+  name: string
+  summary: string
+  description?: string
+  author: {
+    displayName: string
+    handle?: string
+    url?: string
+  }
+  tags: string[]
+  bundleVersion: 1
+  componentCounts: {
+    agentProfiles: number
+    mcpServers: number
+    skills: number
+    repeatTasks: number
+    memories: number
+  }
+  artifact: {
+    url: string
+    fileName: string
+    sizeBytes: number
+  }
+  publishedAt: string
+  updatedAt: string
+  compatibility?: {
+    minDesktopVersion?: string
+    notes?: string[]
+  }
+}
+
+export const sampleBundles: HubCatalogItem[] = [
+  {
+    id: 'research-copilot-stack',
+    name: 'Research Copilot Stack',
+    summary: 'A ready-to-install bundle for literature review, source capture, and synthesis.',
+    description: 'Includes research-focused agents, citation MCP integrations, and note-taking skills for fast brief generation.',
+    author: { displayName: '.agents Labs', handle: '@dotagents', url: 'https://dotagentsprotocol.com' },
+    tags: ['research', 'knowledge', 'workflow'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 3, mcpServers: 2, skills: 4, repeatTasks: 0, memories: 0 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/research-copilot-stack.dotagents',
+      fileName: 'research-copilot-stack.dotagents',
+      sizeBytes: 182044,
+    },
+    publishedAt: '2026-03-01T10:00:00.000Z',
+    updatedAt: '2026-03-03T11:25:00.000Z',
+    compatibility: {
+      minDesktopVersion: '0.0.1',
+      notes: ['Uses the standard desktop import flow'],
+    },
+  },
+  {
+    id: 'agentops-starter-kit',
+    name: 'AgentOps Starter Kit',
+    summary: 'Monitoring, tracing, and production-safe agent defaults in one portable package.',
+    description: 'Designed for teams shipping multi-agent systems with observability hooks, guardrails, and reusable runbooks.',
+    author: { displayName: 'AJ', handle: '@techfren', url: 'https://github.com/aj47' },
+    tags: ['ops', 'observability', 'teams'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 2, mcpServers: 3, skills: 2, repeatTasks: 1, memories: 0 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/agentops-starter-kit.dotagents',
+      fileName: 'agentops-starter-kit.dotagents',
+      sizeBytes: 248912,
+    },
+    publishedAt: '2026-02-27T16:20:00.000Z',
+    updatedAt: '2026-03-02T09:45:00.000Z',
+    compatibility: {
+      minDesktopVersion: '0.0.1',
+      notes: ['Repeat task included as an explicit opt-in public component'],
+    },
+  },
+  {
+    id: 'creator-growth-lab',
+    name: 'Creator Growth Lab',
+    summary: 'Agent bundles for content ideation, audience research, and post optimization.',
+    description: 'Ships a content strategist agent, trend discovery MCP servers, and reusable publishing skills.',
+    author: { displayName: 'Creator Guild', handle: '@creatorguild' },
+    tags: ['marketing', 'content', 'social'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 4, mcpServers: 1, skills: 5, repeatTasks: 0, memories: 0 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/creator-growth-lab.dotagents',
+      fileName: 'creator-growth-lab.dotagents',
+      sizeBytes: 219774,
+    },
+    publishedAt: '2026-02-24T09:45:00.000Z',
+    updatedAt: '2026-02-28T13:10:00.000Z',
+  },
+  {
+    id: 'local-dev-automator',
+    name: 'Local Dev Automator',
+    summary: 'A desktop-first bundle for coding workflows, terminal tools, and repo-aware automation.',
+    description: 'Pairs engineering agents with local MCP servers and repeatable coding skills for day-to-day development work.',
+    author: { displayName: 'Protocol Builders', handle: '@builders' },
+    tags: ['development', 'automation', 'desktop'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 3, mcpServers: 4, skills: 3, repeatTasks: 1, memories: 1 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/local-dev-automator.dotagents',
+      fileName: 'local-dev-automator.dotagents',
+      sizeBytes: 307115,
+    },
+    publishedAt: '2026-02-19T12:30:00.000Z',
+    updatedAt: '2026-03-01T08:05:00.000Z',
+    compatibility: {
+      minDesktopVersion: '0.0.1',
+      notes: ['Includes one memory entry as an explicit public opt-in'],
+    },
+  },
+  {
+    id: 'support-escalation-pack',
+    name: 'Support Escalation Pack',
+    summary: 'Triage incoming issues, enrich context, and hand off complex cases to the right specialist agent.',
+    description: 'Built for customer-facing teams who need repeatable escalation flows with tooling and memory support.',
+    author: { displayName: 'Service Desk Collective', handle: '@servicedesk' },
+    tags: ['support', 'triage', 'operations'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 2, mcpServers: 2, skills: 4, repeatTasks: 2, memories: 0 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/support-escalation-pack.dotagents',
+      fileName: 'support-escalation-pack.dotagents',
+      sizeBytes: 167508,
+    },
+    publishedAt: '2026-02-16T08:15:00.000Z',
+    updatedAt: '2026-02-26T15:30:00.000Z',
+  },
+  {
+    id: 'design-critique-crew',
+    name: 'Design Critique Crew',
+    summary: 'A collaborative bundle for interface reviews, accessibility checks, and UX iteration.',
+    description: 'Combines design-review agents with MCP-backed screenshot tooling and UI critique skills.',
+    author: { displayName: 'Interface Foundry', handle: '@foundry' },
+    tags: ['design', 'ux', 'accessibility'],
+    bundleVersion: 1,
+    componentCounts: { agentProfiles: 3, mcpServers: 2, skills: 3, repeatTasks: 0, memories: 0 },
+    artifact: {
+      url: 'https://hub.dotagentsprotocol.com/bundles/design-critique-crew.dotagents',
+      fileName: 'design-critique-crew.dotagents',
+      sizeBytes: 194332,
+    },
+    publishedAt: '2026-02-11T14:05:00.000Z',
+    updatedAt: '2026-02-20T17:40:00.000Z',
+    compatibility: {
+      notes: ['No additional compatibility requirements declared'],
+    },
+  },
+]

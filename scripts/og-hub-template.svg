@@ -1,0 +1,48 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+  <rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#262626" stroke-width="1"/>
+  <line x1="0" y1="60" x2="1200" y2="60" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="0" y1="570" x2="1200" y2="570" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="760" y1="60" x2="760" y2="570" stroke="#1a1a1a" stroke-width="1"/>
+
+  <text x="32" y="40" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555">PUBLIC CATALOG · hub.dotagentsprotocol.com</text>
+  <text x="1168" y="40" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#555" text-anchor="end">INSTALLABLE BUNDLES</text>
+
+  <text x="60" y="146" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="56" fill="#ffffff">.agents Hub</text>
+  <text x="60" y="190" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#888">Discover and install portable .dotagents bundles</text>
+
+  <rect x="60" y="238" width="640" height="46" rx="8" fill="#111111" stroke="#262626" stroke-width="1"/>
+  <text x="84" y="267" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#666">Search bundles, authors, or tags</text>
+  <text x="670" y="267" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#22d3ee" text-anchor="end">live filter</text>
+
+  <text x="60" y="332" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">FEATURED BUNDLES</text>
+
+  <rect x="60" y="354" width="640" height="70" rx="10" fill="#121212" stroke="#262626" stroke-width="1"/>
+  <text x="84" y="381" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff">Research Copilot Stack</text>
+  <text x="84" y="405" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#888">3 agents · 2 MCP · 4 skills</text>
+  <rect x="574" y="371" width="102" height="34" rx="7" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="625" y="392" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#22d3ee" text-anchor="middle">Install →</text>
+
+  <rect x="60" y="438" width="640" height="70" rx="10" fill="#121212" stroke="#262626" stroke-width="1"/>
+  <text x="84" y="465" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff">AgentOps Starter Kit</text>
+  <text x="84" y="489" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#888">2 agents · 3 MCP · 2 skills</text>
+  <rect x="574" y="455" width="102" height="34" rx="7" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="625" y="476" font-family="SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#22d3ee" text-anchor="middle">Install →</text>
+
+  <text x="60" y="548" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#333">portable · inspectable · shareable · installable</text>
+
+  <rect x="760" y="60" width="440" height="510" fill="#141414"/>
+  <text x="792" y="104" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">publish flow</text>
+  <text x="792" y="144" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="16" fill="#ffffff">catalogItem</text>
+  <text x="792" y="180" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── summary / author / tags</text>
+  <text x="792" y="210" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── compatibility notes</text>
+  <text x="792" y="240" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">├── public-safe component counts</text>
+  <text x="792" y="270" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">└── artifact.fileName + sizeBytes</text>
+
+  <text x="792" y="338" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">bundle artifact</text>
+  <text x="792" y="376" font-family="SF Mono, Menlo, Consolas, monospace" font-weight="700" font-size="18" fill="#22d3ee">example-stack.dotagents</text>
+
+  <text x="792" y="450" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#555">handoff</text>
+  <text x="792" y="488" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#d4d4d4">dotagents://install?bundle=...</text>
+  <text x="792" y="528" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" fill="#333">desktop import flow</text>
+</svg>
