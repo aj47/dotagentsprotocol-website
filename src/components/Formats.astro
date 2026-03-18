@@ -108,6 +108,26 @@
 &#125;</code></pre>
       </div>
 
+      <!-- Knowledge Note -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">knowledge/discord/recaps/recap-2026-03-18/recap-2026-03-18.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">kind</span>: <span class="text-accent-amber">note</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">discord-recap-2026-03-18</span>
+<span class="text-accent-cyan">title</span>: <span class="text-accent-amber">Discord recap for Mar 18</span>
+<span class="text-accent-cyan">context</span>: <span class="text-accent-amber">search-only</span>
+<span class="text-accent-cyan">updatedAt</span>: <span class="text-accent-blue">1770000000000</span>
+<span class="text-accent-cyan">tags</span>: <span class="text-accent-amber">discord, recap</span>
+<span class="text-accent-cyan">group</span>: <span class="text-accent-amber">discord</span>
+<span class="text-accent-cyan">series</span>: <span class="text-accent-amber">recaps</span>
+<span class="text-accent-cyan">entryType</span>: <span class="text-accent-amber">entry</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">Key discussion topics from today's</span>
+<span class="text-fg-muted">Discord channels including protocol</span>
+<span class="text-fg-muted">updates and community feedback.</span></code></pre>
+      </div>
+
       <!-- Repeat Task -->
       <div class="code-block rounded-md overflow-hidden">
         <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">tasks/daily-code-review/task.md</div>
@@ -132,6 +152,51 @@
       <span class="text-fg">Frontmatter format:</span> Uses <code class="text-accent-cyan">---</code> fences with simple <code class="text-accent-cyan">key: value</code> lines.
       Not full YAML — no external dependencies. Values can be quoted. List fields accept CSV (<code class="text-accent-cyan">tags: a, b, c</code>)
       or JSON arrays (<code class="text-accent-cyan">tags: ["a", "b"]</code>). Keys are sorted deterministically for clean diffs.
+    </div>
+
+    <!-- Knowledge note fields -->
+    <div class="mt-4 spec-card rounded-md p-4 text-xs text-fg-muted leading-relaxed">
+      <span class="text-fg">Knowledge note fields:</span> Notes support optional grouping metadata.
+      <table class="w-full mt-3 text-[13px]">
+        <thead>
+          <tr class="border-b border-border text-fg-dim text-xs text-left">
+            <th class="py-1.5 pr-4 font-normal">Field</th>
+            <th class="py-1.5 pr-4 font-normal">Type</th>
+            <th class="py-1.5 font-normal">Description</th>
+          </tr>
+        </thead>
+        <tbody class="text-fg-muted">
+          <tr class="border-b border-border-light">
+            <td class="py-1.5 pr-4"><code class="text-accent-cyan">group</code></td>
+            <td class="py-1.5 pr-4">string</td>
+            <td class="py-1.5">Top-level grouping (e.g. <code class="text-fg-dim">discord</code>, <code class="text-fg-dim">docs</code>)</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="py-1.5 pr-4"><code class="text-accent-cyan">series</code></td>
+            <td class="py-1.5 pr-4">string</td>
+            <td class="py-1.5">Sub-grouping within a group (e.g. <code class="text-fg-dim">recaps</code>, <code class="text-fg-dim">changelogs</code>)</td>
+          </tr>
+          <tr class="border-b border-border-light">
+            <td class="py-1.5 pr-4"><code class="text-accent-cyan">entryType</code></td>
+            <td class="py-1.5 pr-4"><code class="text-fg-dim">note</code> | <code class="text-fg-dim">entry</code> | <code class="text-fg-dim">overview</code></td>
+            <td class="py-1.5">
+              <code class="text-fg-dim">note</code> — standalone note;
+              <code class="text-fg-dim">entry</code> — item in a series;
+              <code class="text-fg-dim">overview</code> — summary/index (e.g. current-state)
+            </td>
+          </tr>
+          <tr>
+            <td class="py-1.5 pr-4"><code class="text-accent-cyan">context</code></td>
+            <td class="py-1.5 pr-4">string</td>
+            <td class="py-1.5"><code class="text-fg-dim">search-only</code> — available via search; <code class="text-fg-dim">prompt</code> — injected into context</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mt-3">
+        <span class="text-fg">Folder layouts:</span>
+        Flat — <code class="text-accent-cyan">knowledge/&lt;slug&gt;/&lt;slug&gt;.md</code> ·
+        Grouped — <code class="text-accent-cyan">knowledge/&lt;group&gt;/&lt;series&gt;/&lt;slug&gt;/&lt;slug&gt;.md</code>
+      </p>
     </div>
   </div>
 </section>
