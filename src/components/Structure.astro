@@ -10,7 +10,7 @@
       <div class="lg:col-span-3 code-block rounded-md overflow-hidden">
         <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">full layout</div>
         <pre class="p-5 text-[13px] leading-loose overflow-x-auto"><code><span class="text-white font-bold">.agents/</span>
-├── <span class="text-accent-blue">speakmcp-settings.json</span>  <span class="text-fg-dim"># general settings</span>
+├── <span class="text-accent-blue">dotagents-settings.json</span> <span class="text-fg-dim"># general settings</span>
 ├── <span class="text-accent-blue">mcp.json</span>                <span class="text-fg-dim"># MCP servers &amp; tools</span>
 ├── <span class="text-accent-blue">models.json</span>             <span class="text-fg-dim"># model presets &amp; keys</span>
 ├── <span class="text-accent-green">system-prompt.md</span>        <span class="text-fg-dim"># system prompt</span>
@@ -31,12 +31,16 @@
 ├── <span class="text-accent-teal">tasks/</span>
 │   └── daily-code-review/
 │       └── <span class="text-accent-teal">task.md</span>          <span class="text-fg-dim"># repeat task definition</span>
-├── <span class="text-accent-rose">memories/</span>
-│   ├── <span class="text-accent-rose">arch-decisions.md</span>
-│   └── <span class="text-accent-rose">user-prefs.md</span>
+├── <span class="text-accent-rose">knowledge/</span>
+│   └── project-architecture/
+│       ├── <span class="text-accent-rose">project-architecture.md</span>  <span class="text-fg-dim"># note frontmatter + body</span>
+│       └── diagram.png              <span class="text-fg-dim"># note-local asset</span>
+├── <span class="text-accent-orange">commands/</span>
+│   ├── <span class="text-accent-orange">work.md</span>              <span class="text-fg-dim"># slash command definition</span>
+│   └── <span class="text-accent-orange">security-audit.md</span>
 └── .backups/               <span class="text-fg-dim"># auto-rotated</span>
     ├── skills/
-    └── memories/</code></pre>
+    └── knowledge/</code></pre>
       </div>
 
       <!-- Layers -->
@@ -68,7 +72,7 @@
             <span class="text-border">←</span>
             <span class="text-accent-green">./.agents</span>
           </div>
-          <p class="text-fg-dim text-xs mt-2">JSON: shallow-merge by key. Skills/memories/agents/tasks: merge by ID (workspace wins).</p>
+          <p class="text-fg-dim text-xs mt-2">JSON: shallow-merge by key. Skills/knowledge/agents/tasks/commands: merge by ID (workspace wins).</p>
         </div>
       </div>
     </div>
