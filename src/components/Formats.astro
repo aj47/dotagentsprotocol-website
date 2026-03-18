@@ -22,20 +22,22 @@
 <span class="text-fg-muted">- Test coverage gaps</span></code></pre>
       </div>
 
-      <!-- Memory -->
+      <!-- Knowledge Note -->
       <div class="code-block rounded-md overflow-hidden">
-        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">memories/arch-decisions.md</div>
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">knowledge/project-architecture/project-architecture.md</div>
         <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
-<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">arch_001</span>
-<span class="text-accent-cyan">title</span>: <span class="text-accent-amber">Database Architecture</span>
-<span class="text-accent-cyan">content</span>: <span class="text-accent-amber">PostgreSQL with Drizzle ORM</span>
-<span class="text-accent-cyan">importance</span>: <span class="text-accent-blue">high</span>
-<span class="text-accent-cyan">tags</span>: <span class="text-accent-amber">database, architecture, orm</span>
+<span class="text-accent-cyan">kind</span>: <span class="text-accent-amber">note</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">project-architecture</span>
+<span class="text-accent-cyan">title</span>: <span class="text-accent-amber">Project Architecture</span>
+<span class="text-accent-cyan">context</span>: <span class="text-accent-amber">auto</span>
+<span class="text-accent-cyan">updatedAt</span>: <span class="text-accent-blue">1234567890</span>
+<span class="text-accent-cyan">tags</span>: <span class="text-accent-amber">architecture, backend</span>
+<span class="text-accent-cyan">summary</span>: <span class="text-accent-amber">Service-oriented app with layered config.</span>
 <span class="text-fg-dim">---</span>
 
-<span class="text-fg">We chose PostgreSQL over MongoDB for</span>
-<span class="text-fg-muted">relational data integrity and complex</span>
-<span class="text-fg-muted">query support across billing.</span></code></pre>
+<span class="text-fg">Service-oriented Electron app with</span>
+<span class="text-fg-muted">layered .agents config. PostgreSQL</span>
+<span class="text-fg-muted">with Drizzle ORM for persistence.</span></code></pre>
       </div>
 
       <!-- MCP -->
@@ -94,7 +96,7 @@
         <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code>&#123;
   <span class="text-accent-cyan">"toolConfig"</span>: &#123;
     <span class="text-accent-cyan">"disabledServers"</span>: [<span class="text-accent-amber">"filesystem"</span>],
-    <span class="text-accent-cyan">"enabledBuiltinTools"</span>: [<span class="text-accent-amber">"mark_work_complete"</span>]
+    <span class="text-accent-cyan">"enabledRuntimeTools"</span>: [<span class="text-accent-amber">"mark_work_complete"</span>]
   &#125;,
   <span class="text-accent-cyan">"modelConfig"</span>: &#123;
     <span class="text-accent-cyan">"mcpToolsProviderId"</span>: <span class="text-accent-amber">"openai"</span>,
@@ -106,6 +108,23 @@
     <span class="text-accent-cyan">"args"</span>: [<span class="text-accent-amber">"--mode"</span>, <span class="text-accent-amber">"review"</span>]
   &#125;
 &#125;</code></pre>
+      </div>
+
+      <!-- Command -->
+      <div class="code-block rounded-md overflow-hidden">
+        <div class="px-4 py-2 border-b border-border text-fg-dim text-xs">commands/work.md</div>
+        <pre class="p-4 text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-fg-dim">---</span>
+<span class="text-accent-cyan">kind</span>: <span class="text-accent-amber">command</span>
+<span class="text-accent-cyan">id</span>: <span class="text-accent-amber">work</span>
+<span class="text-accent-cyan">name</span>: <span class="text-accent-amber">Work</span>
+<span class="text-accent-cyan">description</span>: <span class="text-accent-amber">Start a focused work session</span>
+<span class="text-accent-cyan">enabled</span>: <span class="text-accent-blue">true</span>
+<span class="text-fg-dim">---</span>
+
+<span class="text-fg">Begin a focused work session.</span>
+<span class="text-fg-muted">- Check open tasks and priorities</span>
+<span class="text-fg-muted">- Review recent context and changes</span>
+<span class="text-fg-muted">- Start on the highest-priority item</span></code></pre>
       </div>
 
       <!-- Repeat Task -->
@@ -132,6 +151,15 @@
       <span class="text-fg">Frontmatter format:</span> Uses <code class="text-accent-cyan">---</code> fences with simple <code class="text-accent-cyan">key: value</code> lines.
       Not full YAML — no external dependencies. Values can be quoted. List fields accept CSV (<code class="text-accent-cyan">tags: a, b, c</code>)
       or JSON arrays (<code class="text-accent-cyan">tags: ["a", "b"]</code>). Keys are sorted deterministically for clean diffs.
+    </div>
+
+    <!-- Knowledge notes context -->
+    <div class="mt-4 spec-card rounded-md p-4 text-xs text-fg-muted leading-relaxed">
+      <span class="text-fg">Knowledge notes:</span> Notes live at <code class="text-accent-cyan">knowledge/&lt;slug&gt;/&lt;slug&gt;.md</code> — each in its own folder so note-local assets (images, PDFs) can sit alongside.
+      The <code class="text-accent-cyan">context</code> field controls runtime behavior:
+      <code class="text-accent-cyan">auto</code> = injected into the system prompt as a working note;
+      <code class="text-accent-cyan">search-only</code> = available via search but not auto-injected.
+      Default most notes to <code class="text-accent-cyan">search-only</code>; reserve <code class="text-accent-cyan">auto</code> for a tiny curated set.
     </div>
   </div>
 </section>
