@@ -38,6 +38,11 @@
 ├── <span class="text-accent-orange">commands/</span>
 │   ├── <span class="text-accent-orange">work.md</span>              <span class="text-fg-dim"># slash command definition</span>
 │   └── <span class="text-accent-orange">security-audit.md</span>
+├── compat/
+│   └── dot-agents/
+│       ├── <span class="text-accent-blue">config.json</span>       <span class="text-fg-dim"># generated compatibility output</span>
+│       ├── rules/            <span class="text-fg-dim"># linker target for agent-specific files</span>
+│       └── mcp/              <span class="text-fg-dim"># generated MCP export</span>
 └── .backups/               <span class="text-fg-dim"># auto-rotated</span>
     ├── skills/
     └── knowledge/</code></pre>
@@ -73,6 +78,14 @@
             <span class="text-accent-green">./.agents</span>
           </div>
           <p class="text-fg-dim text-xs mt-2">JSON: shallow-merge by key. Skills/knowledge/agents/tasks/commands: merge by ID (workspace wins).</p>
+        </div>
+
+        <div class="spec-card rounded-md p-4">
+          <div class="text-xs text-fg-dim mb-2">COMPATIBILITY OUTPUT</div>
+          <p class="text-fg-muted text-xs leading-relaxed">
+            Generated exports belong under <code class="text-accent-cyan">compat/&lt;target&gt;/</code> so protocol-native files stay canonical
+            and tool-specific projections remain replaceable.
+          </p>
         </div>
       </div>
     </div>

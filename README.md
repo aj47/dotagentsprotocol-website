@@ -40,6 +40,40 @@ Two layers with overlay semantics. Workspace overrides global.
 - JSON files: shallow-merge by key
 - Skills, agents, tasks, memories: merge by ID (workspace wins)
 
+## Compatibility Targets
+
+The `.agents` Protocol is the canonical source of truth. Compatibility tooling may project that config into narrower,
+tool-specific layouts without changing the protocol-native files.
+
+One useful target is the [`dot-agents`](https://github.com/dot-agents/dot-agents) CLI:
+
+- Keep canonical config in `~/.agents/` and `./.agents/`
+- Generate a compatibility view under `~/.agents/compat/dot-agents/`
+- Let `dot-agents` link that output into tool-native files such as `.cursor/rules/`, `CLAUDE.md`, and `AGENTS.md`
+
+Suggested generated layout:
+
+```text
+~/.agents/compat/dot-agents/
+├── config.json
+├── rules/
+│   ├── global/
+│   │   ├── agents.md
+│   │   └── skills-summary.mdc
+│   └── <project>/
+│       └── workspace-overrides.mdc
+└── mcp/
+    └── global/
+        └── mcp.json
+```
+
+Recommended export scope for compatibility targets:
+
+- Export `agents.md` as shared instructions
+- Export `mcp.json` into target-compatible MCP config
+- Synthesize selected skills and `context: auto` notes into generated rules
+- Keep sub-agents, tasks, commands, models, bundles, and richer protocol features protocol-native unless the target adds first-class support
+
 ## Seven Open Standards
 
 | Standard | Steward | Maps to | Purpose |
